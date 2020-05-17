@@ -1,57 +1,45 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`latest` (*Dockerfile*)](https://github.com/<organization>/docker-<product>/blob/master/Dockerfile)
+-	[`latest` (*Dockerfile*)](https://github.com/tool-dockers/docker-mkpasswd/blob/master/Dockerfile)
 
 # Quick reference
 
 -	**Where to get help**:
-	[the <organization-title> online doc](http://doc.<organization>.com/), [the <organization-title> Support Organization](https://support.<organization>.com/)
+	[the tool-dockers online doc](http://doc.tool-dockers.com/), [the tool-dockers Support Organization](https://support.tool-dockers.com/)
 
 -	**Where to file issues**:
-	[https://github.com/<organization>/docker-mkpasswd/issues](https://github.com/<organization>/docker-mkpasswd/issues)
+	[https://github.com/tool-dockers/docker-mkpasswd/issues](https://github.com/tool-dockers/docker-mkpasswd/issues)
 
 -	**Maintained by**:
-	[the <organization-title> Team](https://github.com/<organization>/docker-mkpasswd)
+	[the tool-dockers Team](https://github.com/tool-dockers/docker-mkpasswd)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))
-	[`amd64`](https://hub.docker.com/r/amd64/<product>/)
+	[`amd64`](https://hub.docker.com/r/amd64/whois/)
 
 -	**Source of this description**:
-	[docs repo's `<organization>/` directory](https://github.com/<organization>/docker-<product>/tree/master) ([history](https://github.com/<organization>/docker-<product>/commits/master))
+	[docs repo's `tool-dockers/` directory](https://github.com/tool-dockers/docker-mkpasswd/tree/master) ([history](https://github.com/tool-dockers/docker-mkpasswd/commits/master))
 
 -	**Supported Docker versions**:
 	[the latest release](https://github.com/docker/docker-ce/releases/latest) (down to 1.6 on a best-effort basis)
 
-# What is <product>?
+# What is mkpasswd?
 
-**<product>** generates passwords and can apply them automatically to users.
+The package contains **mkpasswd**, a features-rich front end to the password encryption function crypt(3).
+
+**mkpasswd** generates passwords and can apply them automatically to users. This tool is useful for Ansible playbooks in scenarios where you want to put a password (for a database) into the playbook but don't want it in the clear.
 
 # How to use this image
+
+## mkpasswd
 
 Command line help is provided:
 
 ```bash
-docker run --name <product> --rm <organization>/<product>:latest -h
+docker run --name whois --rm tooldockers/mkpasswd:latest -h
 ```
 
----
+To generate a SHA-512 encrypted password:
 
-# How to use this template
-
-When you are done modifying the project boilerplate, remove this section from the documentation.
-
-The template is parameterized so that you can use sed to replace strings globally to produce a fully configured baseline project. Globally replace the following terms with your tailored variants:
-
-| Replacement | Description |
-|---|---|
-| `<organization>` | The Docker Hub organization name, in lowercase, as shown in Docker Hub  |
-| `<organization-title>` | The organization's proper name, as registered. |
-| `<product>` | The product name, lower-cased. |
-| `<description>` | The product long description. |
-| `<short-description>` | The product short description. |
-| `<version>` | The product version. |
-| `<release>` | The product release. Different than version, it can be used to denote the version of constituent software instead of your product, e.g. for MySQL if you were to extend MySQL. |
-
-The sample Docker is operational, and fully secure, and CLAIRE scanned. It for illustration purposes simply provides CURL.
-
-The sample Docker uses Alpine 3.11, to keep the image lightweight.
+```bash
+docker run --name whois --rm tooldockers/mkpasswd:latest -m SHA-512 [PASSWORD [SALT]]
+```
