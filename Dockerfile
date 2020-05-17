@@ -8,6 +8,8 @@ RUN set -uex \
 
 FROM debian:buster-slim AS release
 
+ARG VERSION
+
 LABEL "name"="tooldockers/mkpasswd" \
       "maintainer"="tool-dockers" \
       "version"="${VERSION}" \
