@@ -1,22 +1,22 @@
+# Quick reference
 
+-	**Maintained by**:
+	[tool-dockers](https://github.com/tool-dockers/docker-mkpasswd)
+
+-	**Where to get help**:
+	[the tool-dockers Community Slack][slack]
 
 # Supported tags and respective `Dockerfile` links
 
 -	[`latest` (*Dockerfile*)](https://github.com/tool-dockers/docker-mkpasswd/blob/master/Dockerfile)
 
-# Quick reference
-
--	**Where to get help**:
-	[the tool-dockers online doc](http://doc.tool-dockers.com/), [the tool-dockers Support Organization](https://support.tool-dockers.com/)
+# Quick reference (cont.)
 
 -	**Where to file issues**:
 	[https://github.com/tool-dockers/docker-mkpasswd/issues](https://github.com/tool-dockers/docker-mkpasswd/issues)
 
--	**Maintained by**:
-	[the tool-dockers Team](https://github.com/tool-dockers/docker-mkpasswd)
-
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))
-	[`amd64`](https://hub.docker.com/r/amd64/whois/)
+	[`amd64`](https://hub.docker.com/r/amd64/mkpasswd/)
 
 -	**Source of this description**:
 	[docs repo's `tool-dockers/` directory](https://github.com/tool-dockers/docker-mkpasswd/tree/master) ([history](https://github.com/tool-dockers/docker-mkpasswd/commits/master))
@@ -39,13 +39,13 @@ The package contains **mkpasswd**, a features-rich front end to the password enc
 Command line help is provided:
 
 ```bash
-docker run --name whois --rm tooldockers/mkpasswd:latest -h
+docker run --name mkpasswd --rm tooldockers/mkpasswd:latest -h
 ```
 
 To generate a SHA-512 encrypted password:
 
 ```bash
-docker run --name whois --rm tooldockers/mkpasswd:latest -m SHA-512 [PASSWORD [SALT]]
+docker run --name mkpasswd --rm tooldockers/mkpasswd:latest -m SHA-512 [PASSWORD [SALT]]
 ```
 
 # License
