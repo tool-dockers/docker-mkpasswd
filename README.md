@@ -1,3 +1,5 @@
+
+
 # Supported tags and respective `Dockerfile` links
 
 -	[`latest` (*Dockerfile*)](https://github.com/tool-dockers/docker-mkpasswd/blob/master/Dockerfile)
@@ -24,6 +26,8 @@
 
 # What is mkpasswd?
 
+[![tool-dockers][logo]][website]
+
 The package contains **mkpasswd**, a features-rich front end to the password encryption function crypt(3).
 
 **mkpasswd** generates passwords and can apply them automatically to users. This tool is useful for Ansible playbooks in scenarios where you want to put a password (for a database) into the playbook but don't want it in the clear.
@@ -43,3 +47,23 @@ To generate a SHA-512 encrypted password:
 ```bash
 docker run --name whois --rm tooldockers/mkpasswd:latest -m SHA-512 [PASSWORD [SALT]]
 ```
+
+# License
+
+View [license information](https://raw.githubusercontent.com/tool-dockers/docker-mkpasswd/master/LICENSE) for the software contained in this image.
+
+As with all Docker images, these likely also contain other software which may be under other licenses (such as Bash, etc from the base distribution, along with any direct or indirect dependencies of the primary software being contained).
+
+As for any pre-built image usage, it is the image user's responsibility to ensure that any use of this image complies with any relevant licenses for all software contained within.
+
+## License
+
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+## About
+
+[tool-dockers][website] maintains and funds this project.
+
+  [logo]: https://avatars3.githubusercontent.com/u/57697117?s=60&v=4
+  [website]: https://continuul.solutions
+  [slack]: https://continuul.slack.com
